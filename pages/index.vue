@@ -73,6 +73,12 @@ export default {
 
   head: {
     script: [{ src: "https://kit.fontawesome.com/cf7cf76089.js" }]
+  },
+
+  computed: {
+    wikiPosts() {
+      return this.$store.state.wikiPosts;
+    }
   }
 };
 </script>
