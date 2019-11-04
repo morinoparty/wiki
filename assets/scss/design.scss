@@ -1,0 +1,202 @@
+.all {
+  z-index: 3;
+  height: 100vh;
+  grid-template-columns: 250px auto;
+  grid-template-rows: auto;
+  display: grid;
+
+  section#login {
+    padding: 5px 10px;
+    background: none;
+    color: white;
+    margin-bottom: 10px;
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .text {
+      font-weight: bold;
+    }
+  }
+  aside.side {
+    max-height: 100vh;
+    z-index: 3;
+    background-color: #1b4c1d;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    section#logo {
+      z-index: 3;
+      height: 100px;
+      background-color: #1b4c1d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 200px;
+      }
+    }
+    nav#side {
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+
+      .child-open {
+        &:hover {
+          .child {
+            display: block;
+            animation: show 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+      }
+      .child {
+        padding-left: 35px;
+        display: none;
+        animation: showout 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      }
+      @keyframes show {
+        from {
+          opacity: 0;
+          transform: translateY(-39px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      @keyframes showout {
+        from {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+        to {
+          opacity: 0;
+          transform: translateY(-39px);
+        }
+      }
+      .link {
+        color: white;
+        padding: 2px 10px;
+        .icon {
+          width: 30px;
+          height: 30px;
+          font-size: 1.3rem;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  article.content {
+    background-color: white;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    section#login {
+      margin-bottom: 0;
+    }
+    section#title {
+      z-index: 2;
+      overflow: hidden;
+      max-width: 100%;
+      height: 200px;
+      position: relative;
+      background-color: transparent;
+      .post-info {
+        z-index: 3;
+        opacity: 1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100vw - 250px);
+        max-width: 700px;
+        h1 {
+          color: white;
+        }
+      }
+      .bg-color {
+        z-index: 2;
+        position: absolute;
+        height: 100vh;
+        width: 100%;
+        bottom: 0;
+        background-color: #007907;
+        opacity: 0.5;
+      }
+      .bg {
+        background: none;
+        &:before {
+          z-index: 1;
+          content: "";
+          display: block;
+          position: fixed;
+          top: 0;
+          left: 0;
+          transform: translateZ(-1px);
+          width: 100%;
+          height: 100vh;
+          background: url(https://morino.party/assets/firstbackground.webp) 50% /
+            cover no-repeat;
+        }
+      }
+    }
+    section#body {
+      z-index: 4;
+      position: relative;
+      background-color: white;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      .container {
+        max-width: 700px;
+        background-color: white;
+        img {
+          height: auto;
+          width: calc(100% + 30px);
+          transform: translateX(-15px);
+          margin-top: 20px;
+          margin-bottom: 20px;
+          box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+          background-color: #f8f9fa;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+          margin-top: 20px;
+          margin-bottom: 20px;
+          font-weight: bold;
+        }
+        h1 {
+          margin-top: 0px;
+          margin-bottom: 50px;
+          text-align: center;
+        }
+        h2 {
+          background: white;
+          display: inline-block;
+          padding: 10px 15px;
+          font-size: 1.5rem;
+          transform: translateX(-15px);
+          box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+          margin-top: 50px;
+        }
+        a {
+          word-wrap: break-word;
+          letter-spacing: 0.05rem;
+          transition-duration: 0.5s;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+        p {
+          margin-bottom: 1rem;
+          line-height: 2;
+        }
+      }
+    }
+  }
+}
