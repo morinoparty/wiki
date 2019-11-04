@@ -72,7 +72,10 @@ export default {
   },
 
   head: {
-    script: [{ src: "https://kit.fontawesome.com/cf7cf76089.js" }]
+    script: [
+      { src: "https://kit.fontawesome.com/cf7cf76089.js" },
+      { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+    ]
   },
 
   computed: {
