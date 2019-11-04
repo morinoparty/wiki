@@ -1,10 +1,10 @@
 <template>
   <aside class="side">
-    <a href="https://wiki.morino.party">
+    <nuxt-link to="https://wiki.morino.party">
       <section id="logo">
         <img src="/icon/moripawiki.svg" alt />
       </section>
-    </a>
+    </nuxt-link>
 
     <a
       :href="'/admin/#/collections/wiki/entries/'+this.$nuxt.$route.params.page"
@@ -38,64 +38,19 @@
             <div class="icon">
               <i class="fas fa-american-sign-language-interpreting"></i>
             </div>
-            <div class="text">カテゴリ</div>
-          </div>
-          <div class="child">
-            <a href>
-              <div class="link d-flex align-items-center">
-                <div class="icon">
-                  <i class="fas fa-american-sign-language-interpreting"></i>
-                </div>
-                <div class="text">カテゴリ</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </a>
-      <a href>
-        <div class="child-open">
-          <div class="link d-flex align-items-center">
-            <div class="icon">
-              <i class="fas fa-american-sign-language-interpreting"></i>
-            </div>
-            <div class="text">カテゴリ</div>
-          </div>
-          <div class="child">
-            <a href>
-              <div class="link d-flex align-items-center">
-                <div class="icon">
-                  <i class="fas fa-american-sign-language-interpreting"></i>
-                </div>
-                <div class="text">カテゴリ</div>
-              </div>
-            </a>
-            <a href>
-              <div class="link d-flex align-items-center">
-                <div class="icon">
-                  <i class="fas fa-american-sign-language-interpreting"></i>
-                </div>
-                <div class="text">カテゴリ</div>
-              </div>
-            </a>
-            <a href>
-              <div class="link d-flex align-items-center">
-                <div class="icon">
-                  <i class="fas fa-american-sign-language-interpreting"></i>
-                </div>
-                <div class="text">カテゴリ</div>
-              </div>
-            </a>
-            <a href>
-              <div class="link d-flex align-items-center">
-                <div class="icon">
-                  <i class="fas fa-american-sign-language-interpreting"></i>
-                </div>
-                <div class="text">カテゴリ</div>
-              </div>
-            </a>
+            <div class="text">{{this.$store.state.CategoryPosts}}</div>
           </div>
         </div>
       </a>
     </nav>
   </aside>
 </template>
+<script>
+export default {
+  computed: {
+    categoryPosts() {
+      return this.$store.state.CategoryPosts;
+    }
+  }
+};
+</script>
