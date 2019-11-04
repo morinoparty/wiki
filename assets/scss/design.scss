@@ -16,6 +16,16 @@
       border-radius: 5px;
       margin-right: 10px;
     }
+    .link {
+      color: white;
+      padding: 2px 10px;
+      .icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1.3rem;
+        margin-right: 5px;
+      }
+    }
     .text {
       font-weight: bold;
     }
@@ -103,6 +113,10 @@
       height: 200px;
       position: relative;
       background-color: transparent;
+      p {
+        color: white;
+        margin-bottom: 0;
+      }
       .post-info {
         z-index: 3;
         opacity: 1;
@@ -150,6 +164,8 @@
       padding-bottom: 50px;
       min-height: calc(100vh - 200px);
       .container {
+        padding-left: 0;
+        padding-right: 0;
         max-width: 700px;
         background-color: white;
         img {
@@ -171,7 +187,6 @@
         }
         h1 {
           margin-top: 0px;
-          margin-bottom: 50px;
           text-align: center;
         }
         h2 {

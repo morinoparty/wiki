@@ -39,6 +39,8 @@ collections:
     label: "カテゴリ"
     folder: "assets/content/categories"
     create: true
+    editor:
+      preview: false
     fields:
       - { label: "カテゴリ名", name: "title", widget: "string" }
       - { label: "説明文", name: "body", widget: "text" }
