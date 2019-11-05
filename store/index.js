@@ -21,7 +21,7 @@ export const actions = {
     );
     let wikiPosts = files.keys().map(key => {
       let res = files(key);
-      res.slug = key.slice(2, -5);
+      res.slug = key.slice(0, -5);
       return res;
     });
     await commit("setWikiPosts", wikiPosts);
@@ -33,7 +33,7 @@ export const actions = {
     );
     let categoryPosts = cfiles.keys().map(key => {
       let cres = files(key);
-      cres.slug = key.slice(2, -5);
+      cres.slug = key.slice(0, -5);
       return cres;
     });
     await commit("setCategoryPosts", categoryPosts);
