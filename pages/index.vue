@@ -3,18 +3,44 @@
     <side />
     <article class="content">
       <section id="title">
+        <div class="category">
+          <div class="text">
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="folder"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-folder fa-w-16"
+            >
+              <path
+                fill="currentColor"
+                d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
+                class
+              />
+            </svg>チュートリアル
+          </div>
+        </div>
         <div class="post-info">
-          <h1>もりのパーティの将来</h1>
+          <h1>{{wikiPost.title}}</h1>
+          <p>{{wikiPost.description}}</p>
         </div>
         <div class="bg-color"></div>
+        <style v-if="wikiPost.image">
+  .all article.content section#title .bg {
+    background: url({{wikiPost.image}}) 50% / cover no-repeat;
+  }
+  .all article.content section#title .bg:before {
+    display: none;
+  }
+        </style>
         <div class="bg"></div>
       </section>
       <section id="body">
-        <div>
-          <ul v-for="(blogPost, index) in wikiPosts" :key="index">
-            <nuxt-link :to="`${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
-            <p>{{blogPost.description}}</p>
-          </ul>
+        <div class="container">
+          <div v-html="$md.render(wikiPost.body)"></div>
         </div>
       </section>
     </article>
@@ -25,21 +51,61 @@
 import side from "~/components/aside.vue";
 
 export default {
+  head() {
+    return {
+      title: this.wikiPost.title + " | もりのパーティ公式Wiki もりぱうぃき!",
+      script: [{ src: "https://kit.fontawesome.com/cf7cf76089.js" }],
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.wikiPost.description
+        },
+        {
+          property: "og:title",
+          content: this.wikiPost.title
+        },
+        {
+          property: "og:description",
+          content: this.wikiPost.description
+        },
+        {
+          property: "og:type",
+          content: "article"
+        },
+        {
+          property: "og:site_name",
+          content: "もりのパーティ!公式Wiki もりぱうぃき!"
+        },
+        {
+          property: "og:url",
+          content: "https://wiki.morino.party/" + this.$nuxt.$route.params.page
+        },
+        {
+          property: "og:image",
+          content: this.wikiPost.image
+        },
+        {
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+        {
+          name: "twitter:site",
+          content: "morinoparty"
+        }
+      ]
+    };
+  },
+
   components: {
     side
   },
-
-  head: {
-    script: [
-      { src: "https://kit.fontawesome.com/cf7cf76089.js" },
-      { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
-    ]
-  },
-
-  computed: {
-    wikiPosts() {
-      return this.$store.state.wikiPosts;
-    }
+  async asyncData({ params, payload }) {
+    if (payload) return { wikiPost: payload };
+    else
+      return {
+        wikiPost: await require(`~/assets/content/wiki/first.json`)
+      };
   }
 };
 </script>

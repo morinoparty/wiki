@@ -61,16 +61,31 @@
     </a>
 
     <nav id="side">
-      <a href>
+      <nuxt-link to="/category/tutorial">
         <div class="child-open">
           <div class="link d-flex align-items-center">
             <div class="icon">
               <i class="fas fa-american-sign-language-interpreting"></i>
             </div>
-            <div class="text">{{this.$store.state.CategoryPosts}}</div>
+            <div class="text">チュートリアル</div>
           </div>
+          <nuxt-link to="/first">
+            <div class="child">
+              <div class="link d-flex align-items-center">
+                <div class="text">このWikiについて</div>
+              </div>
+            </div>
+          </nuxt-link>
+
+          <nuxt-link to="/antilag">
+            <div class="child">
+              <div class="link d-flex align-items-center">
+                <div class="text">負荷軽減対策案内</div>
+              </div>
+            </div>
+          </nuxt-link>
         </div>
-      </a>
+      </nuxt-link>
     </nav>
   </aside>
 </template>

@@ -49,6 +49,9 @@
     overflow-x: hidden;
     @media (max-width: 991.98px) {
       box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      z-index: 100;
+      width: 100%;
     }
     section#logo {
       z-index: 3;
@@ -76,6 +79,7 @@
       }
     }
     nav#side {
+      color: #007907;
       @media (max-width: 991.98px) {
         display: none;
       }
@@ -91,9 +95,12 @@
             animation: show 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
           }
         }
+        .text {
+          color: #007907;
+        }
       }
       .child {
-        padding-left: 35px;
+        padding-left: calc(35px + 1rem);
         display: none;
         animation: showout 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
@@ -134,6 +141,12 @@
     max-height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    @media (max-width: 991.98px) {
+      max-height: inherit;
+      overflow-y: inherit;
+      overflow-x: hidden;
+      padding-top: 40px;
+    }
     section#login {
       margin-bottom: 0;
     }
