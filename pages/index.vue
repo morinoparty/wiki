@@ -10,8 +10,11 @@
         <div class="bg"></div>
       </section>
       <section id="body">
-        <div class="container">
-          <div>{{this.$store.state.wikiPosts}}</div>
+        <div>
+          <ul v-for="(blogPost, index) in wikiPosts" :key="index">
+            <nuxt-link :to="`${blogPost.slug}`">{{blogPost.title}}</nuxt-link>
+            <p>{{blogPost.description}}</p>
+          </ul>
         </div>
       </section>
     </article>

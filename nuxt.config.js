@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || "",
+    title: "もりのパーティ公式Wiki もりぱうぃき!",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -14,6 +14,7 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
+    script: [{ src: "/typekit.js" }],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
@@ -54,6 +55,14 @@ export default {
   },
 
   generate: {
-    fallback: true
+    routes: function() {
+      const fs = require("fs");
+      return fs.readdirSync("./assets/content/wiki").map(file => {
+        return {
+          route: `/${file.slice(2, -5)}`,
+          payload: require(`./assets/content/wiki/${file}`)
+        };
+      });
+    }
   }
 };

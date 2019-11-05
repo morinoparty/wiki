@@ -1,6 +1,6 @@
 <template>
   <aside class="side">
-    <nuxt-link to="https://wiki.morino.party">
+    <nuxt-link to="/">
       <section id="logo">
         <img src="/icon/moripawiki.svg" alt />
       </section>
