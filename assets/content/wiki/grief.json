@@ -4,5 +4,5 @@
   "description": "めざせ大☆地☆主",
   "date": "2019-11-05T14:22:24.504Z",
   "category": "チュートリアル",
-  "body": "## 概要\n\n指定した範囲を他人に破壊されないように保護します。\r\n\n保護の方法は[こちら](https://morino.party/protect)を参照してください。\n\n## コマンド\n\n\n\n/abandonclaim\t対象の保護を解除する\r\n\n/abandonallclaims\t自身の全ての保護を解除する\r\n\n/trust \\[player]\t他プレイヤーにブロックを編集できる権限を付与する\r\n\n/accesstrust \\[player]\t他プレイヤーにボタンとレバーを使用できる権限を付与する\r\n\n/untrust \\[player]\t他プレイヤーの権限を剥奪する\r\n\n/untrust all\t全てのプレイヤーの権限を剥奪する\r\n\n/trustlist\t権限を付与したプレイヤーの一覧を確認する\r\n\n/trapped\t対象の土地から抜け出す\n\n***\n\n執筆者：ErabaretaAyataka\n\n最終更新日：2019/09/24"
+  "body": "## 概要\n\n指定した範囲を他人に破壊されないように保護します。\r\n\n保護の方法は[こちら](https://morino.party/protect)を参照してください。\n\n<br>\n\n## コマンド\n\n\n\n/abandonclaim\t対象の保護を解除する\r\n\n/abandonallclaims\t自身の全ての保護を解除する\r\n\n/trust \\[player]\t他プレイヤーにブロックを編集できる権限を付与する\r\n\n/accesstrust \\[player]\t他プレイヤーにボタンとレバーを使用できる権限を付与する\r\n\n/untrust \\[player]\t他プレイヤーの権限を剥奪する\r\n\n/untrust all\t全てのプレイヤーの権限を剥奪する\r\n\n/trustlist\t権限を付与したプレイヤーの一覧を確認する\r\n\n/trapped\t対象の土地から抜け出す  \n\n***\n\n執筆者：ErabaretaAyataka\n\n最終更新日：2019/09/24"
 }
