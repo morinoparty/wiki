@@ -59,7 +59,7 @@ export default {
       const fs = require("fs");
       return fs.readdirSync("./assets/content/wiki").map(file => {
         return {
-          route: `/${file.slice(2, -5)}`,
+          route: `/${file}`,
           payload: require(`./assets/content/wiki/${file}`)
         };
       });
