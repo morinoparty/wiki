@@ -13,6 +13,9 @@
 
   @media (prefers-color-scheme: dark) {
     background-color: #171717 !important;
+    article.content section#body {
+      background-color: #1b1f1a !important;
+    }
     article {
       background-color: #1b1f1a !important;
       color: white !important;
