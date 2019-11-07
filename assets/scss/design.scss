@@ -118,7 +118,9 @@
       a:hover {
         text-decoration: none;
       }
-
+      .label {
+        margin-top: 20px;
+      }
       .child-open {
         &:hover {
           .child {
@@ -132,8 +134,6 @@
       }
       .child {
         padding-left: calc(35px + 1rem);
-        display: none;
-        animation: showout 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
       }
       @keyframes show {
         from {

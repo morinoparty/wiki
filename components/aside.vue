@@ -60,41 +60,64 @@
       </section>
     </a>
 
-    <nav id="side">
-      <nuxt-link to="/category/tutorial">
-        <div class="child-open">
-          <div class="link d-flex align-items-center">
-            <div class="icon">
-              <i class="fas fa-american-sign-language-interpreting"></i>
-            </div>
-            <div class="text">チュートリアル</div>
+    <nav id="side" v-for="nav in nav" :key="nav.id">
+      <nuxt-link :to="'/'+nav.slug" v-if="nav.label">
+        <div class="link d-flex align-items-center label">
+          <div class="icon">
+            <i :class="'fas fa-'+nav.icon"></i>
           </div>
-          <nuxt-link to="/first">
-            <div class="child">
-              <div class="link d-flex align-items-center">
-                <div class="text">このWikiについて</div>
-              </div>
-            </div>
-          </nuxt-link>
-
-          <nuxt-link to="/antilag">
-            <div class="child">
-              <div class="link d-flex align-items-center">
-                <div class="text">負荷軽減対策案内</div>
-              </div>
-            </div>
-          </nuxt-link>
+          <div class="text" style="font-weight:bold">{{nav.title}}</div>
+        </div>
+      </nuxt-link>
+      <nuxt-link :to="'/'+nav.slug" v-if="!nav.label">
+        <div class="child">
+          <div class="link d-flex align-items-center">
+            <div class="text">{{nav.title}}</div>
+          </div>
         </div>
       </nuxt-link>
     </nav>
   </aside>
 </template>
 <script>
+import axios from "axios";
 export default {
+  data() {
+    return {
+      nav: null
+    };
+  },
   computed: {
     categoryPosts() {
       return this.$store.state.CategoryPosts;
     }
+  },
+  methods: {
+    fetchNav() {
+      axios
+        .get(
+          "https://moripawiki.microcms.io/api/v1/category_tutorial?fields=title,slug,label,icon&limit=1000",
+          {
+            headers: { "X-API-KEY": "0dd1daaa-f36e-4e25-b552-1f93057baf39" }
+          }
+        )
+        .then(res => {
+          console.log(res.data);
+          this.nav = res.data.contents;
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+    modifyDatetime(date) {
+      const Ymd = date.split("T")[0];
+      const His = date.split("T")[1].split(".")[0];
+
+      return Ymd + " " + His;
+    }
+  },
+  mounted() {
+    this.fetchNav();
   }
 };
 </script>
