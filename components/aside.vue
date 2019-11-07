@@ -60,22 +60,24 @@
       </section>
     </a>
 
-    <nav id="side" v-for="nav in nav" :key="nav.id">
-      <nuxt-link :to="'/'+nav.slug" v-if="nav.label">
-        <div class="link d-flex align-items-center label">
-          <div class="icon">
-            <i :class="'fas fa-'+nav.icon"></i>
+    <nav id="side">
+      <div v-for="nav in nav" :key="nav.id">
+        <nuxt-link :to="'/'+nav.slug" v-if="nav.label">
+          <div class="link d-flex align-items-center label">
+            <div class="icon">
+              <i :class="'fas fa-'+nav.icon"></i>
+            </div>
+            <div class="text" style="font-weight:bold">{{nav.title}}</div>
           </div>
-          <div class="text" style="font-weight:bold">{{nav.title}}</div>
-        </div>
-      </nuxt-link>
-      <nuxt-link :to="'/'+nav.slug" v-if="!nav.label">
-        <div class="child">
-          <div class="link d-flex align-items-center">
-            <div class="text">{{nav.title}}</div>
+        </nuxt-link>
+        <nuxt-link :to="'/'+nav.slug" v-if="!nav.label">
+          <div class="child">
+            <div class="link d-flex align-items-center">
+              <div class="text">{{nav.title}}</div>
+            </div>
           </div>
-        </div>
-      </nuxt-link>
+        </nuxt-link>
+      </div>
     </nav>
   </aside>
 </template>
