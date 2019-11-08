@@ -1,27 +1,22 @@
 <template>
-  <div class="all">
-    <side />
-    <article class="content">
-      <section id="title">
-        <div class="post-info">
-          <h1>{{categoryPost.title}}</h1>
-          <p>{{categoryPost.body}}</p>
-        </div>
-        <div class="bg-color"></div>
-        <div class="bg"></div>
-      </section>
-      <section id="body">
-        <div class="container">
-          <div v-html="$md.render(categoryPost.body)"></div>
-        </div>
-      </section>
-    </article>
-  </div>
+  <article class="content">
+    <section id="title">
+      <div class="post-info">
+        <h1>{{categoryPost.title}}</h1>
+        <p>{{categoryPost.body}}</p>
+      </div>
+      <div class="bg-color"></div>
+      <div class="bg"></div>
+    </section>
+    <section id="body">
+      <div class="container">
+        <div v-html="$md.render(categoryPost.body)"></div>
+      </div>
+    </section>
+  </article>
 </template>
 
 <script>
-import side from "~/components/aside.vue";
-
 export default {
   head() {
     return {
@@ -65,10 +60,6 @@ export default {
         }
       ]
     };
-  },
-
-  components: {
-    side
   },
   async asyncData({ params, payload }) {
     if (payload) return { categoryPost: payload };
