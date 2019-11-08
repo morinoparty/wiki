@@ -14,7 +14,6 @@ export default {
         content: process.env.npm_package_description || ""
       }
     ],
-    script: [{ src: "/typekit.js" }],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   /*
