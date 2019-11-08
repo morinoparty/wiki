@@ -13,7 +13,10 @@ export default {
   },
   head() {
     return {
-      script: [{ src: "https://wiki.morino.party/typekit.js" }]
+      script: [
+        { src: "https://wiki.morino.party/typekit.js" },
+        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+      ]
     };
   }
 };

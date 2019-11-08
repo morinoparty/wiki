@@ -89,11 +89,6 @@ export default {
       nav: null
     };
   },
-  computed: {
-    categoryPosts() {
-      return this.$store.state.CategoryPosts;
-    }
-  },
   methods: {
     fetchNav() {
       axios
