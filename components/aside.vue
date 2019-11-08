@@ -89,6 +89,13 @@ export default {
       nav: null
     };
   },
+  head() {
+    return {
+      script: [
+        { src: "https://identity.netlify.com/v1/netlify-identity-widget.js" }
+      ]
+    };
+  },
   methods: {
     fetchNav() {
       axios
