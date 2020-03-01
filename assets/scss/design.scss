@@ -35,7 +35,7 @@
       color: #75bf79 !important;
     }
     article.content section#title .category .text {
-      background: #202020 !important;
+      background: rgb(27, 31, 26) !important;
       color: #75bf79 !important;
     }
     aside.side section#logo svg {
@@ -84,6 +84,25 @@
       z-index: 100;
       width: 100%;
     }
+    .top {
+      display: flex;
+      @media (min-width: 991.98px) {
+        display: inherit;
+      }
+      button.open {
+        margin-left: auto;
+        background-color: inherit;
+        border: none;
+        padding: none;
+        transition: 0.5s;
+        @media (min-width: 991.98px) {
+          display: none;
+        }
+        &.view {
+          transform: rotate(180deg);
+        }
+      }
+    }
     section#logo {
       z-index: 3;
       height: 100px;
@@ -100,6 +119,7 @@
       @media (max-width: 991.98px) {
         display: block;
         height: 40px;
+        margin-right: auto;
         svg {
           padding-top: 10px;
           padding-bottom: 10px;
@@ -111,9 +131,15 @@
     }
     nav#side {
       padding-bottom: 50px;
+      transition: all 0.5s;
       color: #007907;
       @media (max-width: 991.98px) {
         display: none;
+        opacity: 0;
+        &.view {
+          display: block;
+          opacity: 1;
+        }
       }
       a,
       a:hover {
