@@ -95,6 +95,9 @@
         border: none;
         padding: none;
         transition: 0.5s;
+        svg {
+          fill: #75bf79;
+        }
         @media (min-width: 991.98px) {
           display: none;
         }

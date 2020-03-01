@@ -37,13 +37,7 @@
       </nuxt-link>
 
       <button class="open" v-on:click="toggle_class()" v-bind:class="{ 'view' : isOpen }">
-        <svg
-          fill="#ffffff"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24px"
-          height="24px"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
           <path
             d="M12,14.071L8.179,10.25c-0.414-0.414-1.086-0.414-1.5,0l0,0c-0.414,0.414-0.414,1.086,0,1.5l4.614,4.614 c0.391,0.391,1.024,0.391,1.414,0l4.614-4.614c0.414-0.414,0.414-1.086,0-1.5v0c-0.414-0.414-1.086-0.414-1.5,0L12,14.071z"
           />
@@ -78,7 +72,7 @@
 
     <nav id="side" v-bind:class="{ 'view' : isOpen }">
       <div v-for="nav in nav" :key="nav.id">
-        <nuxt-link :to="'/'+nav.slug" v-if="nav.label">
+        <nuxt-link :to="'/'+nav.slug" v-if="nav.label" @click.native.prevent="close_toggle_class">
           <div class="link d-flex align-items-center label">
             <div class="icon">
               <i :class="'fas fa-'+nav.icon"></i>
@@ -86,7 +80,7 @@
             <div class="text" style="font-weight:bold">{{nav.title}}</div>
           </div>
         </nuxt-link>
-        <nuxt-link :to="'/'+nav.slug" v-if="!nav.label">
+        <nuxt-link :to="'/'+nav.slug" v-if="!nav.label" @click.native.prevent="close_toggle_class">
           <div class="child">
             <div class="link d-flex align-items-center">
               <div class="text">{{nav.title}}</div>
@@ -138,6 +132,9 @@ export default {
     },
     toggle_class() {
       this.isOpen = !this.isOpen;
+    },
+    close_toggle_class() {
+      this.isOpen = false;
     }
   },
   mounted() {
