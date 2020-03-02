@@ -130,7 +130,7 @@ export default {
         },
         {
           property: "og:site_name",
-          content: "もりのパーティ!公式Wiki もりぱうぃき!"
+          content: "もりぱうぃき!"
         },
         {
           property: "og:url",
