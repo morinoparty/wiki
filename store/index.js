@@ -1,14 +1,10 @@
 export const state = () => ({
-  wikiPosts: [],
-  categoryPosts: []
+  blogPosts: []
 });
 
 export const mutations = {
-  setWikiPosts(state, list) {
-    state.WikiPosts = list;
-  },
-  setCategoryPosts(state, list) {
-    state.CategoryPosts = list;
+  setBlogPosts(state, list) {
+    state.blogPosts = list;
   }
 };
 
@@ -19,23 +15,11 @@ export const actions = {
       false,
       /\.json$/
     );
-    let wikiPosts = files.keys().map(key => {
+    let blogPosts = files.keys().map(key => {
       let res = files(key);
-      res.slug = key.slice(0, -5);
+      res.slug = key.slice(2, -5);
       return res;
     });
-    await commit("setWikiPosts", wikiPosts);
-
-    let cfiles = await require.context(
-      "~/assets/content/categories/",
-      false,
-      /\.json$/
-    );
-    let categoryPosts = cfiles.keys().map(key => {
-      let cres = files(key);
-      cres.slug = key.slice(0, -5);
-      return cres;
-    });
-    await commit("setCategoryPosts", categoryPosts);
+    await commit("setBlogPosts", blogPosts);
   }
 };

@@ -1,5 +1,5 @@
 export default {
-  mode: "spa",
+  mode: "universal",
   /*
    ** Headers of the page
    */
@@ -11,7 +11,41 @@ export default {
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content:
+          "もりぱうぃき!は、もりのパーティで暮らす、住人の皆さん向けの「情報をまとめる」サイトです。"
+      },
+      {
+        property: "og:title",
+        content: "もりのパーティ公式Wiki もりぱうぃき!"
+      },
+      {
+        property: "og:description",
+        content:
+          "もりぱうぃき!は、もりのパーティで暮らす、住人の皆さん向けの「情報をまとめる」サイトです。"
+      },
+      {
+        property: "og:type",
+        content: "article"
+      },
+      {
+        property: "og:site_name",
+        content: "もりのパーティ!公式Wiki もりぱうぃき!"
+      },
+      {
+        property: "og:url",
+        content: "https://wiki.morino.party/"
+      },
+      {
+        property: "og:image",
+        content: "https://wiki.morino.party/img/background_ap_2.png"
+      },
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        name: "twitter:site",
+        content: "morinoparty"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
@@ -38,7 +72,8 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
-    "@nuxtjs/markdownit"
+    "@nuxtjs/markdownit",
+    "@nuxtjs/sitemap"
   ],
   markdownit: {
     injected: true
@@ -52,7 +87,13 @@ export default {
      */
     extend(config, ctx) {}
   },
-
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: "https://wiki.morino.party",
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: false
+  },
   generate: {
     routes: function() {
       const fs = require("fs");
