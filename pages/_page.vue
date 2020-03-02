@@ -17,22 +17,22 @@
               fill="currentColor"
               d="M464 128H272l-64-64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V176c0-26.51-21.49-48-48-48z"
               class
-            />
-          </svg>チュートリアル
+            /></svg
+          >チュートリアル
         </div>
       </div>
       <div class="post-info">
-        <h1>{{wikiPost.title}}</h1>
-        <p>{{wikiPost.description}}</p>
+        <h1>{{ wikiPost.title }}</h1>
+        <p>{{ wikiPost.description }}</p>
       </div>
       <div class="bg-color"></div>
       <style v-if="wikiPost.image">
-  .all article.content section#title .bg {
-    background: url({{wikiPost.image}}) 50% / cover no-repeat;
-  }
-  .all article.content section#title .bg:before {
-    display: none;
-  }
+        .all article.content section#title .bg {
+          background: url({{wikiPost.image}}) 50% / cover no-repeat;
+        }
+        .all article.content section#title .bg:before {
+          display: none;
+        }
       </style>
       <div class="bg"></div>
     </section>
