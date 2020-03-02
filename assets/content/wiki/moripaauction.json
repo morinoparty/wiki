@@ -3,6 +3,6 @@
   "title": "MoripaAuction（オークション）",
   "description": "オークションに参加して初期スポーン地点に近い土地を入手しよう！！",
   "category": "プラグイン",
-  "body": "* # **概要**\n\nマイクラ内のコマンドから、該当した土地に入札して、*終了時刻に一番高い値段*で入札していた方に\\\n\\\n土地の所有権を**入手する事**が出来ます\n\n\\\n**今**オークションに出されている土地を確認する方法\\\n\\\nこちらのwebから確認出来ます\n\n[https://support.morino.party/auctions](https://support.morino.party/auctions \"https\\://support.morino.party/auctions\")",
+  "body": "# **概要**\n\nマイクラ内のコマンドから、該当した土地に入札して、*終了時刻に一番高い値段*で入札していた方に\\\n\\\n土地の所有権を**入手する事**が出来ます\n\n\\\n**今**オークションに出されている土地を確認する方法\\\n\\\nこちらのwebから確認出来ます\n\n[https://support.morino.party/auctions](https://support.morino.party/auctions \"https\\://support.morino.party/auctions\")\\\n\\\nこちらでidも確認出来ます\\\n\\\n土地を入札するコマンドは\n\n/auction bid \\[id] \\[金額]\n\nで入札出来ます\n\n現在の価格など、現在の状況を確認するコマンドは\\\n\\\n/auction current \\[id]\n\nで確認出来ます\\\n\\\nまたディスコードの情報のオークション状況からも確認出来ます！！\\\n\\\n君も土地の所有権を獲得して森パを更に発展させよう！！",
   "slug": "MoripaAuction"
 }
