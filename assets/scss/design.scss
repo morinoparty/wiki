@@ -266,7 +266,7 @@
           z-index: 1;
           content: "";
           display: block;
-          position: fixed;
+          position: relative;
           top: 0;
           left: 0;
           transform: translateZ(-1px);
