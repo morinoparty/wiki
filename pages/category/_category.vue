@@ -8,16 +8,26 @@
       <div class="bg-color"></div>
       <div class="bg"></div>
     </section>
-    <section id="body">
+    <section id="list">
       <div class="container">
-        <div v-html="$md.render(categoryPost.body)"></div>
+        <nuxt-link
+          :to="'/' + content.slug"
+          v-for="(content, index) in blogPosts"
+          v-bind:key="index"
+        >
+          <card :content="content"></card>
+        </nuxt-link>
       </div>
     </section>
   </article>
 </template>
 
 <script>
+import card from "~/components/card-post";
 export default {
+  components: {
+    card
+  },
   head() {
     return {
       title:
@@ -67,6 +77,13 @@ export default {
       return {
         categoryPost: await require(`~/assets/content/categories/${params.category}.json`)
       };
+  },
+  computed: {
+    blogPosts() {
+      return this.$store.state.blogPosts.filter(
+        v => v.category == this.categoryPost.title
+      );
+    }
   }
 };
 </script>

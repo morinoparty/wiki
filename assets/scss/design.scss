@@ -200,6 +200,33 @@
       }
     }
   }
+  article.list {
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-rows: 200px 1fr;
+    width: 100%;
+    border: 2px solid #e8e8e8;
+    border-radius: 10px;
+    .image {
+      width: 100%;
+      background-color: #75bf79;
+      background-size: cover;
+    }
+    .content {
+      padding: 25px 20px;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: left;
+    }
+    p {
+      font-size: 0.9rem;
+      opacity: 0.6;
+      margin-bottom: 0;
+    }
+  }
   article.content {
     background-color: rgba(253, 253, 254, 1);
     max-height: 100vh;
@@ -347,6 +374,9 @@
       padding-top: 50px;
       padding-bottom: 50px;
       min-height: calc(100vh - 300px);
+      &.category {
+        min-height: inherit;
+      }
       .container {
         padding-left: 0;
         padding-right: 0;
