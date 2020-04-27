@@ -3,6 +3,6 @@
   "category": "投稿",
   "title": "wiki編集練習ページ",
   "slug": "practice",
-  "body": "#### 見出しA\n＠\n＠\n＠\n＠\n＠＠\n＠\n＠＠＠\n＠\n＠\n## 見出しB\n＠\n＠\n＠\n＠\n＠＠＠\n＠\n＠\n\n[見出しA](#見出しa)\n＠\n＠\n＠\n＠\n＠＠＠\n＠\n＠\n\n[見出しB](#見出しb)",
+  "body": "#### 見出しA\n\n＠＠ ＠ ＠ ＠\n＠＠＠\n＠\n＠\n\n## 見出しB\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\n[見出しA](#見出しa) ＠\n＠\n＠＠＠\n＠\n＠\n\n[見出しB](#見出しb)",
   "description": "文字通りの練習ページ、らくがきちょー"
 }
