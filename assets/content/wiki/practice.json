@@ -3,6 +3,6 @@
   "category": "投稿",
   "title": "wiki編集練習ページ",
   "slug": "practice",
-  "body": "#### 見出しA\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\n## 見出しB\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\n[見出しA](https://wiki.morino.party/practice/#見出しa) \n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\n[見出しB](https://wiki.morino.party/practice/#見出しb)",
+  "body": "<a id=\"index\"></a>\r\n## <a href=\"#index\">目次</a>\n* [目次](#index)\r\n* [第1章](#anchor1)\r\n* [第2章](#anchor2)\n\n\nあ \n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n\n#### 見出しB\n\nあ\n\nい\n\nう\n\nえ\n\nお\n\nか\n\nき\n\nく\n\nけ\n\nこ\n\nさ\n\nし\n\nす\n\nせ\n\nそ\n<a id=\"anchor1\"></a>\r\n## <a href=\"#anchor1\">第1章</a>  \n[見出しA](#見出しa) \n\n[見出しB](#見出しb)",
   "description": "文字通りの練習ページ、らくがきちょー"
 }
