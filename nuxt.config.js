@@ -22,7 +22,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["@plugins/markdown-it.js"],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -33,8 +33,31 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
-    "@nuxtjs/sitemap"
+    "@nuxtjs/sitemap",
+    "@nuxtjs/markdownit"
   ],
+
+  markdownit: {
+    injected: true,
+    breaks: true,
+    html: true,
+    linkify: true,
+    typography: true,
+    use: [
+      "markdown-it-fontawesome",
+      [
+        "markdown-it-anchor",
+        {
+          permalink: true,
+          slugify: s => require("uslug")(s)
+        }
+      ],
+      [
+        "markdown-it-table-of-contents",
+        { includeLevel: [1, 2, 3], slugify: s => require("uslug")(s) }
+      ]
+    ]
+  },
   /*
    ** Build configuration
    */
