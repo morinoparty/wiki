@@ -22,7 +22,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ["@plugins/markdown-it.js"],
   /*
    ** Nuxt.js dev-modules
    */
@@ -33,12 +33,8 @@ export default {
   modules: [
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
-    "@nuxtjs/markdownit",
     "@nuxtjs/sitemap"
   ],
-  markdownit: {
-    injected: true
-  },
   /*
    ** Build configuration
    */

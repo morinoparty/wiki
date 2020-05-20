@@ -44,6 +44,69 @@
   </article>
 </template>
 
+<style lang="scss">
+h1,
+h2,
+h3,
+h4 {
+  a.header-anchor {
+    font-size: 80%;
+    color: #007907;
+    transform: all 1s ease;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.table-of-contents {
+  position: relative;
+  background-color: whitesmoke;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  padding: 15px 15px;
+  border-radius: 0 15px 15px 15px;
+  &:before {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    content: "もくじ";
+    background-color: #007907;
+    height: 40px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 10px 10px 0 0;
+  }
+  li {
+    margin-bottom: 20px;
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+    ul {
+      margin-top: 10px;
+      padding-left: 30px;
+      list-style-type: decimal;
+      a {
+        color: gray;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  ul {
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+    list-style-type: none;
+    padding: 0;
+    a {
+      color: #007907;
+    }
+  }
+}
+</style>
+
 <script>
 export default {
   head() {
