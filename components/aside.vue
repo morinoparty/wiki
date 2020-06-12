@@ -45,6 +45,8 @@
       </button>
     </div>
 
+    
+
     <a
       :href="
         '/admin/#/collections/wiki/entries/' + this.$nuxt.$route.params.page
@@ -73,6 +75,17 @@
     </a>
 
     <nav id="side" v-bind:class="{ view: isOpen }">
+      <a href="https://morino.party" target="_blank" style="text-decoration:none;">
+      <section class="goMorinoParty d-flex justify-content-center">
+        <div class="link d-flex align-items-center">
+          <div class="icon">
+            <i class="fas fa-tree"></i>
+          </div>
+          <div class="text text-center">もりぱ公式サイト</div>
+        </div>
+      </section>
+    </a>
+
       <div v-for="(content,index) in category" :key="index">
         <category :category="content" v-on:call-parent="close_toggle_class"></category>
       </div>

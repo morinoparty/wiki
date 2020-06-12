@@ -71,6 +71,7 @@ h4 {
     top: -40px;
     left: 0;
     content: "もくじ";
+    color: white;
     background-color: #007907;
     height: 40px;
     padding: 8px 20px;
