@@ -2,7 +2,7 @@
   "title": "GriefPrevention",
   "slug": "grief",
   "description": "自分の土地を正しく管理しよう",
-  "date": "2019-11-05T14:22:24.504Z",
+  "date": "2020-12-18T16:43:24.094Z",
   "category": "プラグイン",
-  "body": "## 概要\n\n指定した範囲を他人に破壊されないように保護します。\n\n保護の方法は[こちら](https://morino.party/protect)を参照してください。\n\n## コマンド\n\n/removeclaim\t対象の保護を解除する\n\n/trust \\[player]\t他プレイヤーにブロックを編集できる権限を付与する\n\n/accesstrust \\[player]\t他プレイヤーにボタンとレバーを使用できる権限を付与する\n\n/untrust \\[player]\t他プレイヤーの権限を剥奪する\n\n/untrust all\t全てのプレイヤーの権限を剥奪する\n\n/trustlist\t権限を付与したプレイヤーの一覧を確認する\n\n/trapped\t対象の土地から抜け出す  \n\n- - -\n\n執筆者：ErabaretaAyataka\n\n最終更新日：2019/09/24"
+  "body": "## 概要\n\n指定した範囲を他人に破壊されないように保護します。\n\n保護の方法は[こちら](https://morino.party/protect)を参照してください。\n\n## コマンド\n\n/removeclaim\t対象の保護を解除する\n\n/trust \\[player]\t他プレイヤーにブロックを編集できる権限を付与する\n\n/permissiontrust \\[player] 他プレイヤーに保護を編集できる権限を付与する\n\n/containertrust \\[player]　他プレイヤーにチェストの中身などを編集できる権限を付与する\n\n/accesstrust \\[player]\t他プレイヤーにボタンとレバーを使用できる権限を付与する\n\n/untrust \\[player]\t他プレイヤーの権限を剥奪する\n\n/untrust all\t全てのプレイヤーの権限を剥奪する\n\n/trustlist\t権限を付与したプレイヤーの一覧を確認する\n\n/trapped\t対象の土地から抜け出す  \n\n- - -\n\n執筆者：ErabaretaAyataka\n\n最終更新日：2020/12/19\n\n<!--最終更新者 eringi-->"
 }
