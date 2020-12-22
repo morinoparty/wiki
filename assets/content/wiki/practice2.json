@@ -4,5 +4,5 @@
   "title": "Wiki編集練習2",
   "slug": "practice2",
   "description": "練習帳2",
-  "body": "</html>\n<head>\n    <meta charset=\"UTF-8\">\n    <style>\n        html,\n        body {\n            margin: 0;\n            padding: 0;\n        }\n        img[usemap]{\n            width: 100%;\n            height: 100%;\n        }\n    </style>\n</head>\n<body>\n    <img src=\"/img/もりパ路線図-村一覧-.jpg\" usemap=\"#VillageMaptest2\" alt=\"\" />\n   <map name=\"VillageMaptest2\">\n  <area shape=\"rect\" coords=\"325,-4,425,150\" href=\"https://wiki.morino.party/shin\" alt=\"\" />\n  <area shape=\"rect\" coords=\"855,604,948,741\" href=\"href=\"https://wiki.morino.party/mvu\" alt=\"\" />\n    </map>\n</body>\n\n</html>\n\n\n\nab"
+  "body": "</html>\n<head>\n    <meta charset=\"UTF-8\">\n    <style>\n        html,\n        body {\n            margin: 0;\n            padding: 0;\n        }\n        img[usemap]{\n            width: 100%;\n            height: 100%;\n        }\n    </style>\n</head>\n<body>\n    <img src=\"/img/もりパ路線図-村一覧-.jpg\" usemap=\"#VillageMaptest2\" alt=\"\" />\n   <map name=\"VillageMaptest2\">\n  <area shape=\"rect\" coords=\"325,-4,425,150\" href=\"https://wiki.morino.party/shin\" alt=\"\" />\n  <area shape=\"rect\" coords=\"855,604,948,741\" href=\"href=\"https://wiki.morino.party/mvu\" alt=\"\" />\n    </map>\n</body>\n\n</html>\n\n\n\nabc"
 }
