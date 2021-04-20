@@ -2,7 +2,7 @@
   "date": "2020-02-29T07:40:13.830Z",
   "title": "MoripaAuction（土地オークション）",
   "description": "オークションに参加して初期スポーン地点に近い土地を入手しよう！！",
-  "category": "プラグイン",
+  "category": "アーカイブ",
   "body": "## 概要\n\n出品されている土地に入札して、*終了時刻に一番高い値段*で入札していた方が\\\nその土地をゲットできます！\n\nシステム自体をもりぱオリジナルで制作しました！\n\n## コマンド\n\n### **/ma bid \\[id] \\[金額]**\n\n該当するIDの商品に入札することができます。\n\n### /ma info \\[id]\n\n現在の価格など、現在の状況を確認する事ができます。\n\n### /ma\n\nもりオク! プラグインのコマンド一覧を確認できます。\n\n## 出品中の土地の情報を確認する\n\nこちらのWebサイトからリアルタイムに確認できます\n\n[https://support.morino.party/auctions](https://support.morino.party/auctions \"https\\://support.morino.party/auctions\")\n\nまた、Discordの「#オークション情報」でも、リアルタイムの通知を配信中!\\\nオークションで戦う君をもりぱは応援しているぞ！\\\n\\\n君も土地の所有権を獲得してもりぱを更に発展させよう！！",
   "slug": "MoripaAuction",
   "image": "/img/2020-03-02_17.37.51.png"
