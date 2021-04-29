@@ -105,8 +105,9 @@ export default {
       isOpen: false,
       category: [
         { title: "チュートリアル", slug: "tutorial", icon: "thumbs-up" },
-        { title: "プラグイン", slug: "plugins", icon: "plug" },
+        { title: "MOD・プラグイン", slug: "plugins", icon: "plug" },
         { title: "イベント", slug: "event", icon: "birthday-cake" },
+        { title: "観光案内", slug: "train_infomation", icon: "camera-retro" },
         { title: "投稿", slug: "post", icon: "file" }
       ]
     };
