@@ -1,8 +1,8 @@
 {
-  "title": "使用許可MOD",
-  "slug": "mod",
-  "description": "mod mod mod !",
+  "title": "使用禁止MOD",
+  "slug": "bannedmod",
+  "description": "ban ban ban !",
   "date": "2019-11-05T16:13:34.563Z",
   "category": "MOD・プラグイン",
-  "body": "# \\=使用許可MOD＝\n\n## Optifine\n\nMinecraftの軽量化\n\n## スポーンチェッカー系\n\nMOBのスポーン情報を表示を視覚化します。\\\n[SpawnChecker](https://www.dropbox.com/sh/mlfsx6b3z5ek8wv/Oyz8_2pnnq/SpawnChecker)、[Light Overlay](https://www.curseforge.com/minecraft/mc-mods/light-overlay/files)、など\n\n## HorseInfoReloaded\n\n馬のステータスやオーナーを表示\n\n## Litematica\n\n設計図を表示【自動建築機能は使用禁止】\n\n## grid\n\n任意の間隔のマスを表示\n\n## インベントリ整理系\n\n[Mouse Tweaks](https://www.curseforge.com/minecraft/mc-mods/mouse-tweaks)など\n\n## クラフト補助系\n\n[Crafting Tweaks](https://wiki.morino.party/admin/#/collections/wiki/entries/mod)など\n\n- - -\n\n# \\=使用禁止MOD=\n\n## ミニマップ系\n\n地図をご利用ください。\n\n## X-rayなどの透過系\n\nX-rayテクスチャなども同じく使用禁止です。\n\n## 座標表示系 [¶](https://wiki.morino.party/mod#%E5%BA%A7%E6%A8%99%E8%A1%A8%E7%A4%BA%E7%B3%BB)\n\n座標の確認手段はデバッグモード（F3キー）を使用してください。\n\n# その他未許可のMOD・クライアント等を使用することを禁止しています。\n\n- - -\n\n執筆者：tututututu201 , \\_NIKOMARU、macaronipenguin\\_\n\n作成日　2020/05/06\n\n最終更新日 2021/3/29"
+  "body": "# \\=使用禁止MOD=\n\nゲーム性を大きく変えてしまうMODは禁止します。\n\n### ミニマップ系\n\nXaero's Minimapや\rJourneyMapなどの全てのミニマップMOD。\n目に見えない洞窟やアメジストジオードが発見できる為。\n\n### 透視系\n\nX-RayなどのブロックやMOBを透視するMOD。\n目に見えない鉱石やチェストを発見できる為。\n\n### 暗視系\n\n夜や洞窟内で光源ブロックを設置しなくても明るく出来るMOD。\n暗視ポーションの存在意義を奪う為。\n\n### チート系\n\nAIMBOT、Fly、WallHack、AutoClick、などの機能を備えたチートMOD。\n他プレイヤーよりも優位に立つことが出来る機能を多数備えている為。\n\n### PVPクライアント\n\nLunar CliantやBadlionなどのPVPで使われるクライアント。\n暗視などのハック要素を含むクライアントもある為。\n\n### その他\nこのMOD使っても大丈夫かな？と思ったらお問い合わせ下さい。\n不安な場合はオススメMODのページに記載してあるMODだけ使いましょう。\n\n- - -\n\n執筆者：tututututu201、\\_NIKOMARU、macaronipenguin\\_、Unitarou\n\n作成日　2020/05/06\n\n最終更新日 2021/8/14"
 }
