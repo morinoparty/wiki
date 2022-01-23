@@ -5,5 +5,5 @@
   "description": "nozarasiを案内するページです",
   "image": "static/img/nozarasi_icon.png",
   "category": "観光、案内",
-  "body": "`<img src=\"/img/nozarasi_map.png>`"
+  "body": "**nozarasiとは?**\n\n**nozarasiの人\\[kimura_family]が運営する町及びコミュニティの総称である!**\n\n`<img src=\"/img/nozarasi_map.png>`"
 }
