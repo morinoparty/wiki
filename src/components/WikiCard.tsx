@@ -1,5 +1,6 @@
 import { sva } from "styled-system/css";
 import { WikiPost } from "../lib/getAllPosts";
+import Link from "next/link";
 
 const wikiCardStyles = sva({
   slots: [
@@ -37,6 +38,8 @@ const wikiCardStyles = sva({
       height: "fit-content",
       borderRadius: "10px",
       bg: "leaf.200",
+      objectFit: "cover",
+      objectPosition: "center",
     },
   },
 });
@@ -44,12 +47,18 @@ const wikiCardStyles = sva({
 export default function WikiCard({ post }: { post: WikiPost }) {
   const styles = wikiCardStyles();
   return (
-    <article className={styles.card}>
-      <img className={styles.image} src={post.image || "/"} alt={post.title} />
+    <Link href={`/${post.slug}`}>
+      <article className={styles.card}>
+        <img
+          className={styles.image}
+          src={post.image || "/"}
+          alt={post.title}
+        />
 
-      <div className={styles.container}>
-        <h2 className={styles.title}>{post.title}</h2>
-      </div>
-    </article>
+        <div className={styles.container}>
+          <h2 className={styles.title}>{post.title}</h2>
+        </div>
+      </article>
+    </Link>
   );
 }

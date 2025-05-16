@@ -17,9 +17,9 @@ const layoutStyles = sva({
       display: "grid",
       gridTemplateRows: "auto 1fr",
       gridArea: "sidebar",
-      padding: "20px",
       borderRight: "1px solid",
       borderColor: "leaf.200",
+      minHeight: "100vh",
     },
     main: {
       display: "grid",

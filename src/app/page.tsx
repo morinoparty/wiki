@@ -7,7 +7,9 @@ import { css } from "styled-system/css";
 import { Grid } from "styled-system/jsx";
 
 export default async function Home() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({
+    sortBy: "date",
+  });
 
   return (
     <div className={css({})}>

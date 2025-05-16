@@ -35,7 +35,7 @@ export const textStyles = defineTextStyles({
       fontFamily: "Gen Jyuu Gothic LP",
       fontWeight: 500,
       fontSize: 16,
-      lineHeight: 1.7,
+      lineHeight: 1.75,
     },
   },
   caption: {
