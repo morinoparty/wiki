@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { css } from "styled-system/css";
 import { Home, Search, Tag } from "lucide-react";
+import { UserBox } from "./UserBox";
 
 export function Sidebar() {
   return (
@@ -17,6 +18,9 @@ export function Sidebar() {
         minHeight: "100vh",
         height: "100vh",
         maxHeight: "100vh",
+
+        display: "grid",
+        gridTemplateRows: "auto auto 1fr auto",
       })}
     >
       <Link
@@ -93,6 +97,8 @@ export function Sidebar() {
           </NavListCategory>
         </ul>
       </nav>
+
+      <UserBox />
     </aside>
   );
 }

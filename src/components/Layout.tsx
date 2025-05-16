@@ -2,7 +2,7 @@ import { sva } from "../../styled-system/css";
 import { Footer } from "./Footer";
 
 const layoutStyles = sva({
-  slots: ["container", "sidebar", "main"],
+  slots: ["container", "sidebar", "main", "mainContainer"],
   base: {
     container: {
       display: "grid",
@@ -26,6 +26,9 @@ const layoutStyles = sva({
       gridTemplateRows: "auto 1fr",
       gridArea: "main",
     },
+    mainContainer: {
+      minHeight: "100vh",
+    },
   },
 });
 
@@ -41,7 +44,7 @@ export default function Layout({
     <div className={styles.container}>
       <div className={styles.sidebar}>{sidebar}</div>
       <div className={styles.main}>
-        {children}
+        <div className={styles.mainContainer}>{children}</div>
         <Footer />
       </div>
     </div>
