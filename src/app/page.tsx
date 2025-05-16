@@ -8,6 +8,7 @@ import { Grid } from "styled-system/jsx";
 export default async function Home() {
   const posts = await getAllPosts({
     sortBy: "date",
+    order: "desc",
   });
 
   return (
@@ -87,7 +88,7 @@ export default async function Home() {
             }}
             gap={"64px 24px"}
           >
-            {posts.splice(0, 3).map((post) => (
+            {posts.splice(0, 6).map((post) => (
               <WikiCard key={post.slug} post={post} />
             ))}
           </Grid>
