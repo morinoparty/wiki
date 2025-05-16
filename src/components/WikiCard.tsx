@@ -51,7 +51,7 @@ export default function WikiCard({ post }: { post: WikiPost }) {
       <article className={styles.card}>
         <img
           className={styles.image}
-          src={post.image || "/"}
+          src={post.image || "/assets/placeholder.svg"}
           alt={post.title}
         />
 
