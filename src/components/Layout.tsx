@@ -1,4 +1,5 @@
 import { sva } from "../../styled-system/css";
+import { Footer } from "./Footer";
 
 const layoutStyles = sva({
   slots: ["container", "sidebar", "main"],
@@ -10,21 +11,20 @@ const layoutStyles = sva({
         "sidebar main"
         `,
       minHeight: "100vh",
+      backgroundColor: "leaf.50",
     },
     sidebar: {
       display: "grid",
       gridTemplateRows: "auto 1fr",
       gridArea: "sidebar",
-      backgroundColor: "gray.200",
       padding: "20px",
+      borderRight: "1px solid",
+      borderColor: "leaf.200",
     },
     main: {
       display: "grid",
       gridTemplateRows: "auto 1fr",
       gridArea: "main",
-      backgroundColor: "white",
-      padding: "20px",
-      borderLeft: "1px solid gray",
     },
   },
 });
@@ -40,7 +40,10 @@ export default function Layout({
   return (
     <div className={styles.container}>
       <div className={styles.sidebar}>{sidebar}</div>
-      <div className={styles.main}>{children}</div>
+      <div className={styles.main}>
+        {children}
+        <Footer />
+      </div>
     </div>
   );
 }

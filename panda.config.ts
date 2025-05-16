@@ -1,4 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
+import customColorsPreset from "./src/tokens/custom-colors-preset";
+import { textStyles } from "./text-styles";
 
 export default defineConfig({
   // Whether to use css reset
@@ -15,9 +17,15 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      textStyles,
+    },
   },
 
   // The output directory for your css system
   outdir: "styled-system",
+
+  jsxFramework: "react", // or 'solid' or 'vue'
+
+  presets: [customColorsPreset],
 });
