@@ -1,7 +1,7 @@
 import { css, cx } from "styled-system/css";
-import { Button as ChakraButton } from "@chakra-ui/react";
+import { Button as ChakraButton, type ButtonProps } from "@chakra-ui/react";
 
-export function Button(props: React.ComponentPropsWithoutRef<"button">) {
+export function Button(props: ButtonProps) {
   return (
     <ChakraButton
       className={cx(
