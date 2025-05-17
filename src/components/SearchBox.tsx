@@ -1,15 +1,16 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Document as FlexSearchDocument } from "flexsearch";
-import { Search } from "lucide-react";
+import { Search, XIcon } from "lucide-react";
 import { sva } from "styled-system/css";
+import { IconButton, Popover } from "@chakra-ui/react";
 
 export type PostDocument = {
-    slug: string;
-    title: string;
-    date: string;
-    tags: string;
-    content: string;
+  slug: string;
+  title: string;
+  date: string;
+  tags: string;
+  content: string;
 };
 
 // SVAでスタイルを定義
@@ -79,7 +80,6 @@ const searchBoxStyles = sva({
       left: 0,
       right: 0,
       mt: "8px",
-      zIndex: 40,
     },
     popoverContent: {
       maxH: "70vh",
@@ -202,7 +202,7 @@ export const SearchBox = () => {
   // インデックスの初期化
   useEffect(() => {
     if (typeof window === "undefined") return;
-    
+
     async function initializeSearchIndex() {
       setIsLoading(true);
       try {
@@ -264,7 +264,7 @@ export const SearchBox = () => {
       });
 
       const allResults = new Map<string, PostDocument>();
-      
+
       // 結果の処理
       type EnrichedResult = { id: string; doc: PostDocument | null; highlight?: string };
       type EnrichedDocumentSearchResult = { field?: keyof PostDocument; tag?: keyof PostDocument; result: EnrichedResult[] };
@@ -284,7 +284,7 @@ export const SearchBox = () => {
 
       const results = Array.from(allResults.values());
       setSearchResults(results);
-      setIsOpen(results.length > 0);
+      setIsOpen(results.length > 0 || (inputRef.current?.value.length ?? 0) > 0);
     } catch (error) {
       console.error("検索処理中にエラーが発生しました:", error);
     }
@@ -293,7 +293,7 @@ export const SearchBox = () => {
   // 検索結果のハイライト
   const highlightText = (text: string, query: string) => {
     if (!query.trim()) return text;
-    
+
     try {
       const segments = text.split(new RegExp(`(${query})`, "gi"));
       return segments.map((segment, index) =>
@@ -342,35 +342,33 @@ export const SearchBox = () => {
 
   return (
     <div className={styles.container}>
-      <label className={styles.searchLabel}>
-        <Search />
-        <input
-          ref={inputRef}
-          type="search"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className={styles.searchInput}
-        />
-        {isLoading && <div className={styles.spinner} />}
-      </label>
-
-      {isOpen && searchResults.length > 0 && (
-        <div className={styles.popover}>
-          <div className={styles.popoverContent}>
+      <Popover.Root open={isOpen} onOpenChange={(details) => setIsOpen(details.open)} initialFocusEl={() => inputRef.current}>
+        <Popover.Trigger asChild>
+          <label className={styles.searchLabel}>
+            <Search />
+            <input
+              ref={inputRef}
+              type="search"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className={styles.searchInput}
+            />
+          </label>
+        </Popover.Trigger>
+        <Popover.Positioner>
+          <Popover.Content className={styles.popoverContent}>
             <div className={styles.popoverHeader}>
               <h3 className={styles.popoverHeaderTitle}>
                 「{searchTerm}」の検索結果 ({searchResults.length}件)
               </h3>
-              <button 
-                onClick={() => setIsOpen(false)} 
-                className={styles.popoverCloseButton}
-                aria-label="閉じる"
-              >
-                ✕
-              </button>
+              <Popover.CloseTrigger asChild>
+                <IconButton variant="ghost" size="sm" colorScheme="leaf" aria-label="Close">
+                  <XIcon />
+                </IconButton>
+              </Popover.CloseTrigger>
             </div>
-            <div className={styles.popoverBody}>
+            <Popover.Body className={styles.popoverBody}>
               {searchResults.length > 0 ? (
                 <div className={styles.resultsList}>
                   {searchResults.map((result) => (
@@ -382,15 +380,15 @@ export const SearchBox = () => {
                         <div className={styles.resultMeta}>
                           <span>{formatDate(result.date)}</span>
                           <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderRadius: "2rem" }}>
-                            {typeof result.tags === 'string' 
+                            {typeof result.tags === 'string'
                               ? result.tags.split(',').map((tag) => (
-                                  <span
-                                    key={tag}
-                                    className={styles.resultTag}
-                                  >
-                                    {highlightText(tag.trim(), searchTerm)}
-                                  </span>
-                                ))
+                                <span
+                                  key={tag}
+                                  className={styles.resultTag}
+                                >
+                                  {highlightText(tag.trim(), searchTerm)}
+                                </span>
+                              ))
                               : null
                             }
                           </div>
@@ -410,10 +408,10 @@ export const SearchBox = () => {
                   <p>検索結果がありません</p>
                 </div>
               )}
-            </div>
-          </div>
-        </div>
-      )}
+            </Popover.Body>
+          </Popover.Content>
+        </Popover.Positioner>
+      </Popover.Root>
     </div>
   );
 } 
