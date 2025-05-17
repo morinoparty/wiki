@@ -1,5 +1,3 @@
-import '@fontsource/genjyuu-gothic/500.css';
-import '@fontsource/genjyuu-gothic/700.css';
 import type { Metadata } from "next";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
@@ -16,6 +14,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+      <link
+          href="https://shogo82148.github.io/genjyuugothic-subsets/GenJyuuGothicL-P-Medium/GenJyuuGothicL-P-Medium.css"
+          type="text/css"
+          rel="stylesheet"
+        />
+
+        <link
+          href="https://shogo82148.github.io/genjyuugothic-subsets/GenJyuuGothicL-P-Bold/GenJyuuGothicL-P-Bold.css"
+          type="text/css"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <Provider>{children}</Provider>
       </body>

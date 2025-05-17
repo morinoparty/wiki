@@ -17,7 +17,6 @@
   "dependencies": {
     "@chakra-ui/react": "^3.19.0",
     "@emotion/react": "^11.14.0",
-    "@fontsource/genjyuu-gothic": "^5.2.5",
     "@opennextjs/cloudflare": "^1.0.2",
     "flexsearch": "^0.8.167",
     "lucide-react": "^0.511.0",

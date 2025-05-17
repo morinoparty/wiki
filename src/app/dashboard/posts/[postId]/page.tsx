@@ -1,4 +1,3 @@
-import { getAllPosts } from "@/lib/getAllPosts";
 import { css } from "styled-system/css";
 
 export default async function Home() {
@@ -10,11 +9,4 @@ export default async function Home() {
       })}
     ></div>
   );
-}
-
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({
-    postId: post.slug,
-  }));
 }

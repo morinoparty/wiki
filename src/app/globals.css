@@ -1,4 +1,5 @@
 @layer reset, base, tokens, recipes, utilities;
+
 @font-face {
     font-family: 'Satoshi-Variable';
     src: url('/assets/fonts/Satoshi-Variable.woff2') format('woff2'),

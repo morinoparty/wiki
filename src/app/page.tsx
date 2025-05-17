@@ -37,7 +37,7 @@ export default async function Home() {
           <p
             className={css({
               textStyle: "body",
-              color: "leaf.500",
+              color: "leaf.600/50",
               mb: "28px",
             })}
           >

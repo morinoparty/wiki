@@ -7,7 +7,6 @@ import Link from "next/link";
 import { Tag } from "lucide-react";
 import { components } from "@/components/MDXRemoteComponents";
 import { Cta } from "@/components/Cta";
-import { getAllPosts } from "@/lib/getAllPosts";
 
 // 動的ルートのパラメータ型
 interface PageProps {
@@ -120,12 +119,4 @@ export default async function Page({ params }: PageProps) {
       </div>
     </div>
   );
-}
-
-
-export async function generateStaticParams() {
-  const posts = await getAllPosts();
-  return posts.map((post) => ({
-    postId: post.slug,
-  }));
 }

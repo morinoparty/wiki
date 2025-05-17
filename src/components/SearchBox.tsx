@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import FlexSearch from "flexsearch";
+import { Document as FlexSearchDocument } from "flexsearch";
 import { Search } from "lucide-react";
 import { sva } from "styled-system/css";
 
@@ -10,10 +10,6 @@ export type PostDocument = {
     date: string;
     tags: string;
     content: string;
-};
-
-type SearchResult = {
-  doc: PostDocument;
 };
 
 // SVAでスタイルを定義
@@ -195,7 +191,7 @@ const searchBoxStyles = sva({
 });
 
 export const SearchBox = () => {
-  const indexRef = useRef<any>(null);
+  const indexRef = useRef<FlexSearchDocument<PostDocument> | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState<PostDocument[]>([]);
@@ -211,7 +207,7 @@ export const SearchBox = () => {
       setIsLoading(true);
       try {
         // インデックスを初期化
-        const index = new FlexSearch.Document({
+        const index = new FlexSearchDocument<PostDocument>({
           preset: "match",
           tokenize: "reverse",
           document: {
@@ -270,12 +266,14 @@ export const SearchBox = () => {
       const allResults = new Map<string, PostDocument>();
       
       // 結果の処理
+      type EnrichedResult = { id: string; doc: PostDocument | null; highlight?: string };
+      type EnrichedDocumentSearchResult = { field?: keyof PostDocument; tag?: keyof PostDocument; result: EnrichedResult[] };
       [titleResults, contentsResults, tagsResults].forEach((resultSet) => {
         if (resultSet && resultSet.length > 0) {
-          resultSet.forEach((result: any) => {
+          (resultSet as EnrichedDocumentSearchResult[]).forEach((result) => {
             if (result.result) {
-              result.result.forEach((item: SearchResult) => {
-                if (!allResults.has(item.doc.slug)) {
+              result.result.forEach((item) => {
+                if (item.doc && !allResults.has(item.doc.slug)) {
                   allResults.set(item.doc.slug, item.doc);
                 }
               });
@@ -307,7 +305,7 @@ export const SearchBox = () => {
           segment
         )
       );
-    } catch (e) {
+    } catch {
       return text;
     }
   };
