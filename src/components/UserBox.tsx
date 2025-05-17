@@ -9,7 +9,7 @@ export const UserBox: React.FC = async () => {
   const session = (await auth()) as ExtendedSession;
 
   if (!session) {
-    return <div>Not logged in</div>;
+    return;
   }
 
   return (
@@ -42,7 +42,13 @@ export const UserBox: React.FC = async () => {
           {session?.user?.name || "Unknown User"}
         </Link>
       </p>
-      <IconButton variant={"ghost"} aria-label="More options" size="sm">
+      <IconButton
+        variant={"ghost"}
+        aria-label="More options"
+        size="sm"
+        borderRadius={"50%"}
+        color={"leaf.600"}
+      >
         <Ellipsis />
       </IconButton>
     </div>

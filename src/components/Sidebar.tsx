@@ -3,6 +3,8 @@ import Link from "next/link";
 import { css } from "styled-system/css";
 import { Home, Search, Tag } from "lucide-react";
 import { UserBox } from "./UserBox";
+import { NotLoginNote } from "./NotLoginNote";
+import { AuthConditional } from "./AuthConditional";
 
 export function Sidebar() {
   return (
@@ -98,7 +100,11 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      <UserBox />
+      <div>
+        <AuthConditional fallback={<NotLoginNote />}>
+          <UserBox />
+        </AuthConditional>
+      </div>
     </aside>
   );
 }
