@@ -14,9 +14,15 @@ importers:
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.4)(react@19.1.0)
+      '@fontsource/genjyuu-gothic':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@opennextjs/cloudflare':
         specifier: ^1.0.2
         version: 1.0.2(wrangler@4.15.2)
+      flexsearch:
+        specifier: ^0.8.167
+        version: 0.8.167
       lucide-react:
         specifier: ^0.511.0
         version: 0.511.0(react@19.1.0)
@@ -939,6 +945,9 @@ packages:
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
+
+  '@fontsource/genjyuu-gothic@5.2.5':
+    resolution: {integrity: sha512-5acPGoBCsPHobjCAFXYLa7X7oesCamtRf12zHv2YEq1IWEcBa7w+TqNBrH3n9c2z4piwLAVsG7v0knrDeEm7qg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2922,6 +2931,9 @@ packages:
 
   flatted@3.3.3:
     resolution: {integrity: sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==}
+
+  flexsearch@0.8.167:
+    resolution: {integrity: sha512-iCBbY9npWhNlTCiHha2pwGqtbhpSEHx8+m5FJab+DLr/IKMneLNDgWbu2+IOvsAHo/Euo2Fu/5awrAEhN4q8Jw==}
 
   for-each@0.3.5:
     resolution: {integrity: sha512-dKx12eRCVIzqCxFGplyFKJMPvLEWgmNtUrpTiJIR5u97zEhRG8ySrtboPHZXx7daLxQVrl643cTzbab2tkQjxg==}
@@ -6138,6 +6150,8 @@ snapshots:
 
   '@floating-ui/utils@0.2.9': {}
 
+  '@fontsource/genjyuu-gothic@5.2.5': {}
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -8980,6 +8994,8 @@ snapshots:
       keyv: 4.5.4
 
   flatted@3.3.3: {}
+
+  flexsearch@0.8.167: {}
 
   for-each@0.3.5:
     dependencies:

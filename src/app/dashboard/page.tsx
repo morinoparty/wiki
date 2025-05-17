@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import { Button } from "@/components/Button";
 import { getAllPosts } from "@/lib/getAllPosts";
 import { Edit } from "lucide-react";

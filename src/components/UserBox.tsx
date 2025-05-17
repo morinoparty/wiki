@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+
 import { auth, ExtendedSession } from "@/lib/auth";
 import { IconButton } from "@chakra-ui/react";
 import { Ellipsis } from "lucide-react";
