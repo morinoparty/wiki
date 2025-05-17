@@ -349,7 +349,7 @@ export const SearchBox = () => {
         <input
           ref={inputRef}
           type="search"
-          placeholder="ブログ内を検索..."
+          placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           className={styles.searchInput}
@@ -383,7 +383,6 @@ export const SearchBox = () => {
                         </h4>
                         <div className={styles.resultMeta}>
                           <span>{formatDate(result.date)}</span>
-                          <span>•</span>
                           <div style={{ display: "flex", flexWrap: "wrap", gap: "4px", borderRadius: "2rem" }}>
                             {typeof result.tags === 'string' 
                               ? result.tags.split(',').map((tag) => (
