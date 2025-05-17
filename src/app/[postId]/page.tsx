@@ -11,6 +11,7 @@ interface PageProps {
 }
 
 export default async function Page({ params }: PageProps) {
+  if (!params.postId) return notFound();
   const post = await getPostBySlug(params.postId);
   if (!post) return notFound();
 

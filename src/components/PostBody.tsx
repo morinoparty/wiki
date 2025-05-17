@@ -26,7 +26,9 @@ export function PostBody({ body }: PostBodyProps) {
     <main className={classes.root}>
       <Suspense fallback={<div>Loading...</div>}>
         <MDXRemote
-          source={body.replace(/<(["'][^"']*["']|[^'">])*>/g, "").replace(/[{}]/g, "")}
+          source={body
+            .replace(/<(["'][^"']*["']|[^'">])*>/g, "")
+            .replace(/[{}]/g, "")}
           components={components}
           options={{
             mdxOptions: {

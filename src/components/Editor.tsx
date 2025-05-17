@@ -45,6 +45,8 @@ export const MilkdownEditor: React.FC<{
             color: "leaf.700",
             fontSize: "16px",
             lineHeight: "1.85",
+
+            outline: "none",
           },
           // 段落
           "& .ProseMirror p": {
