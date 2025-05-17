@@ -6,6 +6,8 @@ const postCta = sva({
     root: {
       px: "90px",
       mb: "90px",
+      maxWidth: "980px",
+      mx: "auto",
     },
   },
 });
