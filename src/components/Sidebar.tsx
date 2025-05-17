@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { css } from "styled-system/css";
-import { Home, Search, Tag } from "lucide-react";
+import { Home, Tag } from "lucide-react";
 import { UserBox } from "./UserBox";
+import { SearchBox } from "@/components/SearchBox";
 import { NotLoginNote } from "./NotLoginNote";
 import { AuthConditional } from "./AuthConditional";
 
@@ -44,37 +44,7 @@ export function Sidebar() {
         />
       </Link>
 
-      <label
-        className={css({
-          display: "flex",
-          alignItems: "center",
-          gap: "16px",
-          pb: "24px",
-          width: "calc(100% + 42px + 32px)",
-          pl: "42px",
-          pr: "32px",
-          ml: "-42px",
-          color: "leaf.600",
-          borderBottom: "1px solid",
-          borderColor: "leaf.200",
-        })}
-      >
-        <Search />
-        <input
-          type="search"
-          placeholder="Search..."
-          className={css({
-            width: "100%",
-            textStyle: "body",
-            outline: "none",
-            color: "leaf.600",
-            _placeholder: {
-              color: "leaf.600",
-              opacity: 0.5,
-            },
-          })}
-        />
-      </label>
+      <SearchBox />
 
       <nav>
         <ul className={css({ listStyle: "none", pt: "28px" })}>

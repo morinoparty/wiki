@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { Cta } from "@/components/Cta";
 import WikiCard from "@/components/WikiCard";
 import { getAllPosts } from "@/lib/getAllPosts";
@@ -38,9 +37,8 @@ export default async function Home() {
           <p
             className={css({
               textStyle: "body",
-              color: "leaf.600",
+              color: "leaf.600/50",
               mb: "28px",
-              opacity: 0.5,
             })}
           >
             Minecraft コミュニティ「もりのパーティ」の公式Wiki

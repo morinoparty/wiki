@@ -14,7 +14,7 @@ export interface ExtendedSession extends Session {
   };
 }
 
-export const { handlers, signIn, signOut, auth } = NextAuth(async (_) => {
+export const { handlers, signIn, signOut, auth } = NextAuth(async () => {
   // let { env } = await getCloudflareContext({async: true})
   return {
     debug: false,

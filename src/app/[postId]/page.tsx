@@ -10,12 +10,12 @@ import { Edit } from "lucide-react";
 
 // 動的ルートのパラメータ型
 interface PageProps {
-  params: { postId: string };
+  params: Promise<{ postId: string }>;
 }
 
 export default async function Page({ params }: PageProps) {
-  if (!params.postId) return notFound();
-  const post = await getPostBySlug(params?.postId);
+  const { postId } = await params;
+  const post = await getPostBySlug(postId);
   if (!post) return notFound();
 
   return (
