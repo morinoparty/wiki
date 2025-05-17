@@ -15,7 +15,7 @@ export default async function Home() {
       <div
         className={css({
           width: "100%",
-          height: "360px",
+          minHeight: "420px",
           backgroundImage: "url('/assets/top-header.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
