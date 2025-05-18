@@ -1,5 +1,5 @@
 import { MilkdownEditor } from "@/components/Editor";
-import { PostHeader } from "@/components/PostHeader";
+import { PostHeaderEdit } from "@/components/PostHeaderEdit";
 import { getPostBySlug } from "@/lib/getPostBySlug";
 import { Button } from "@chakra-ui/react";
 import { ChevronLeft } from "lucide-react";
@@ -61,12 +61,13 @@ export default async function Page({ params }: PageProps) {
         </div>
       </nav>
 
-      <PostHeader
+      <PostHeaderEdit
         image={post.image}
         category={post.category}
         title={post.title}
         description={post.description}
       />
+
       <div
         className={css({
           px: "90px",

@@ -2,7 +2,7 @@ import { sva } from "styled-system/css";
 import Link from "next/link";
 import { Tag } from "lucide-react";
 
-const postHeader = sva({
+export const postHeaderStyles = sva({
   slots: ["container", "info", "image", "category", "title", "description"],
   base: {
     container: {
@@ -36,10 +36,12 @@ const postHeader = sva({
       color: "leaf.700",
       textStyle: "heading1",
       mb: "24px",
+      width: "100%",
     },
     description: {
       textStyle: "body",
       color: "leaf.600",
+      width: "100%",
     },
   },
 });
@@ -57,7 +59,7 @@ export function PostHeader({
   title,
   description,
 }: PostHeaderProps) {
-  const classes = postHeader();
+  const classes = postHeaderStyles();
   return (
     <header className={classes.container}>
       {image && (
