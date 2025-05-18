@@ -1,17 +1,18 @@
-import { Button } from "@/components/Button";
-import { signIn } from "@/lib/auth";
+import { LoginModal } from "@/components/LoginModal";
+import { css } from "styled-system/css";
 
 export default async function Home() {
   return (
-    <form
-      action={async () => {
-        "use server";
-        await signIn("MineAuth", { redirectTo: "/" });
-      }}
+    <div
+      className={css({
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        bgColor: "leaf.100",
+      })}
     >
-      <Button type="submit">
-        <span>Moripa APIにログイン</span>
-      </Button>
-    </form>
+      <LoginModal />
+    </div>
   );
 }

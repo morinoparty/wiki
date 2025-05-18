@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Provider } from "@/components/ui/provider";
+import Layout from "@/components/Layout";
+import { Sidebar } from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -8,14 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  auth,
   children,
 }: Readonly<{
   children: React.ReactNode;
+  auth: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-      <link
+        <link
           href="https://shogo82148.github.io/genjyuugothic-subsets/GenJyuuGothicL-P-Medium/GenJyuuGothicL-P-Medium.css"
           type="text/css"
           rel="stylesheet"
@@ -28,7 +32,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          {auth}
+          <Layout sidebar={<Sidebar />}>{children}</Layout>
+        </Provider>
       </body>
     </html>
   );

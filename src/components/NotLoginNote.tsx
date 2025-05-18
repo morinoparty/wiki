@@ -1,6 +1,7 @@
 import { css } from "styled-system/css";
 import { Button } from "@/components/Button";
 import { signIn } from "@/lib/auth";
+import Link from "next/link";
 
 export const NotLoginNote = () => {
   return (
@@ -56,7 +57,7 @@ export const NotLoginNote = () => {
         })}
       >
         <Button
-          type="submit"
+          // type="submit"
           style={{
             background: "#cdebdf",
             color: "#347e5e",
@@ -67,8 +68,9 @@ export const NotLoginNote = () => {
             height: "40px",
             width: "100%",
           }}
+          asChild
         >
-          ログイン
+          <Link href="/auth/sign-in">ログイン</Link>
         </Button>
       </div>
     </form>
