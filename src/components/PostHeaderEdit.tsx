@@ -69,7 +69,7 @@ export function PostHeaderEdit({
         className={classes.image}
         style={
           image
-            ? { backgroundImage: `url(${image})` }
+            ? { backgroundImage: `url(${image})`, position: "relative" }
             : {
                 background: "#f5f5f5",
                 minHeight: "420px",
@@ -140,21 +140,18 @@ export function PostHeaderEdit({
           placeholder="タイトル"
           size="lg"
         >
-          <h1
+          <Editable.Preview
             className={cx(
               classes.title,
-              css({
-                fieldSizing: "content",
-              })
+              css({ px: "0", py: "0", margin: "0" })
             )}
-          >
-            <Editable.Preview />
-            <Editable.Textarea
-              className={css({
-                fieldSizing: "content",
-              })}
-            />
-          </h1>
+          />
+          <Editable.Textarea
+            className={cx(
+              classes.title,
+              css({ px: "0", py: "0", margin: "0", fieldSizing: "content" })
+            )}
+          />
         </Editable.Root>
         <Editable.Root
           value={description}
@@ -163,22 +160,20 @@ export function PostHeaderEdit({
           selectOnFocus
           placeholder="説明"
           size="md"
+          autoResize={false}
         >
-          <p
+          <Editable.Preview
             className={cx(
               classes.description,
-              css({
-                fieldSizing: "content",
-              })
+              css({ px: "0", py: "0", margin: "0" })
             )}
-          >
-            <Editable.Preview />
-            <Editable.Textarea
-              className={css({
-                fieldSizing: "content",
-              })}
-            />
-          </p>
+          />
+          <Editable.Input
+            className={cx(
+              classes.description,
+              css({ px: "0", py: "0", margin: "0", fieldSizing: "content" })
+            )}
+          />
         </Editable.Root>
       </div>
     </header>
