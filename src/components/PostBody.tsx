@@ -1,4 +1,12 @@
 import { sva } from "styled-system/css";
+import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { Suspense } from "react";
+import { components } from "@/components/MDXRemoteComponents";
+import rehypeSanitize from "rehype-sanitize";
+import rehypeStringify from "rehype-stringify";
+import rehypeRaw from "rehype-raw";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
 
 const postBody = sva({
   slots: ["root"],
@@ -12,28 +20,28 @@ const postBody = sva({
     },
   },
 });
-import { MDXRemote } from "next-mdx-remote-client/rsc";
-import { Suspense } from "react";
-import { components } from "@/components/MDXRemoteComponents";
 
 interface PostBodyProps {
   body: string;
 }
 
-export function PostBody({ body }: PostBodyProps) {
+export async function PostBody({ body }: PostBodyProps) {
   const classes = postBody();
+
   return (
     <main className={classes.root}>
       <Suspense fallback={<div>Loading...</div>}>
         <MDXRemote
-          source={body
-            .replace(/<(["'][^"']*["']|[^'">])*>/g, "")
-            .replace(/[{}]/g, "")}
+          source={body}
           components={components}
           options={{
             mdxOptions: {
-              remarkPlugins: [],
-              rehypePlugins: [],
+              remarkPlugins: [
+                remarkParse,
+                [remarkRehype, { allowDangerousHtml: false, skipHtml: true }],
+              ],
+              rehypePlugins: [rehypeRaw, rehypeStringify, rehypeSanitize],
+              format: "md",
             },
           }}
         />
